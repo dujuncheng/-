@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--表单的三种方式-->
+		<form action="" method="post" id="myform" name="myform">
+			<input type="submit" name="" id="" value="请注意input上面有哪些属性" />
+			<button type="submit">注意，button的按钮上的字是写在中间的</button>
+			<input type="image" name="" id="" value="" src="../image/7.jpg"/>
+		</form>
+	</body>
+	<script type="text/javascript">
+		//获取表单的两种方式
+		var form=document.getElementById("myform");
+		//document.forms获取所有的forms,返回一个数组。
+		alert(form ==document.forms[0]);
+		alert(form==document.forms["myform"])
+	</script>
+</html>
