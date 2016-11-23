@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../eventUtil.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<form action="" method="post">
+			<input type="submit" value="click me" id="btn"/>
+		</form>
+		<form action="" method="post">
+			<input type="submit" value="click me" id="btn1"/>
+		</form>
+		<script type="text/javascript">
+			//使用原生的js语言
+			var btn=document.getElementById("btn");
+			btn.onclick=function(event){
+				event.preventDefault();
+			}
+			//使用封装好的方法
+			var btn1=document.forms[1];
+			eventUtil.addHander(btn1,"submit",function(event){
+				event=eventUtil.getEvent(event);
+				eventUtil.preventDefault(event);
+			})
+			
+			//使用程序提交表单
+			document.forms[0].submit();
+		</script>
+		
+	</body>
+</html>

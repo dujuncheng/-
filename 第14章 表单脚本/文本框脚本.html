@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--文本框的实现有两种，分别是input 和textarea input的属性是size和maxlenth，而textarea则是cols rows-->
+		<form action="" method="post" >
+			<input type="text" name="" id="" value="" size="15" maxlength="25"/>
+			<textarea name="textarea" rows="5" cols="5">哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</textarea>
+			<input type="submit" value=""/>
+		</form>
+		<script type="text/javascript">
+			var form=document.forms[0];
+			alert(form.elements[1].value);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../eventUtil.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<form action="" method="post">
+			
+			<input type="submit" value="click me"/>
+			<input type="submit" value="click me"/>
+		</form>
+		<script type="text/javascript">
+			var form=document.forms[0];
+			eventUtil.addHander(form,"submit",function(event){
+				var event=eventUtil.getEvent(event);
+				var btn=eventUtil.getTarget(event);
+				btn.disabled=true;
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../eventUtil.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<form action="" method="post">
+			<input type="text" name="" id="" value="" />
+			<input type="submit" value="click me"/>
+		</form>
+	</body>
+	<script type="text/javascript">
+		var textbox=document.forms[0].elements[0];
+		textbox.value="哈哈哈，你被我控制了";
+		var range=textbox.createTextRange();
+		
+		range.collapse(true);
+		range.moveStart("character",0);
+		range.moveEnd("character",textbox.length);
+		range.select();
+	</script>
+</html>

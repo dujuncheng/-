@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../eventUtil.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<form action="" method="post">
+			
+			<input type="submit" value="click me" id="btn"/>
+		</form>
+		<script type="text/javascript">
+			var btn=document.getElementById("btn");
+			eventUtil.addHander(btn,"click",function(event){
+				var event=eventUtil.getEvent(event);
+				eventUtil.preventDefault(event);
+			})
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../eventUtil.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<form action="" method="post">
+			<input type="text" name="" id="" value="" placeholder="plase text some" />
+			<input type="text" name="" id="" value="" placeholder="plase text some" />
+			<input type="submit" value="pay for it" id="btn3"/>
+		</form>
+		<script type="text/javascript">
+			var form=document.forms[0];
+			var btn1=form.elements[0];
+			alert(btn1.form===form);
+			var btn2=form.elements[1];
+			btn2.focus();
+			btn1.disabled=true;
+		</script>
+	</body>
+</html>

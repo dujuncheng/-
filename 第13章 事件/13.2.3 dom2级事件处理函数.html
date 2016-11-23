@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" name="mybtn" id="mybtn" value="click me" />
+		<script type="text/javascript">
+			var btn=document.getElementById("mybtn");
+			btn.addEventListener("click",function(){alert("dsf")},false)
+			btn.addEventListener("click",fn1,true);
+			function fn1(){
+				alert(this.value);
+			}
+			btn.removeEventListener("click",fn1,false);
+		</script>
+	</body>
+</html>

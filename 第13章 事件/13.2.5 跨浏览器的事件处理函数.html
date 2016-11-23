@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" name="" id="mybtn" value="click me" />
+		<script type="text/javascript">
+			var eventUtil={
+				addhander:function(element,type,hander){
+					if(element.addEventListener){
+						element.addEventListener(type,hander,false);
+					}else if(element.attachEvent){
+						element.attachEvent("on"+type,hander);
+					}else{
+						element['on'+type]=hander;
+					}
+				},
+				removehander:function(element,type,hander){
+					if(element.removeEventListener){
+						element.removeEventListener(type,hander,false);
+					}else if(element.detachEvent){
+						element.detachEvent("on"+type,hander);
+					}else{
+						element["on"+type]=null;
+					}
+				}
+			};
+		</script>
+		<script type="text/javascript">
+			var btn=document.getElementById("mybtn");
+			eventUtil.addhander(btn,"click",function(){alert("dsaf")})
+		</script>
+	</body>
+</html>

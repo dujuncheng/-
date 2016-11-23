@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../eventUtil.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<form action="" method="post">
+			<input type="text" name="" id="" value="" />
+			<input type="submit" value="click"/>
+		</form>
+		<script type="text/javascript">
+			var form=document.forms[0];
+			var textbtn=form.elements[0];
+			eventUtil.addHander(textbtn,"focus",function(event){
+				var event=eventUtil.getEvent(event);
+				var target=eventUtil.getTarget(event);
+				target.select();
+			})
+		</script>
+	</body>
+</html>

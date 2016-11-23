@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../eventUtil.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<form action="" method="post">
+			<input type="text" name="" id="" value="" />
+			<input type="text" name="" id="" value="" />
+			<input type="text" name="" id="" value="" />
+			<input type="submit" value="click me"/>
+		</form>
+		<script type="text/javascript">
+			var form=document.forms[0];
+		    eventUtil.addHander(window,'load',function(event){
+		    	if(!form.elements[1].autofocus == true){
+		    	   alert("dsfa");
+		    	}
+		    })
+		</script>
+	</body>
+</html>

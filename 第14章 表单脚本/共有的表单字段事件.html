@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../eventUtil.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<form action="" method="post">
+			<input type="text" name="" id="" value="" />
+			<input type="submit" value="click me"/>
+		</form>
+		<script type="text/javascript">
+			var textbtn=document.forms[0].elements[0];
+			eventUtil.addHander(textbtn,"focus",function(event){
+				event=eventUtil.getEvent(event);
+				var target=eventUtil.getTarget(event);
+				if(target.style.backgroundColor!=="red"){
+					target.style.backgroundColor="green";
+				}
+			});
+			eventUtil.addHander(textbtn,"change",function(event){
+				event=eventUtil.getEvent(event);
+				var target=eventUtil.getTarget(event);
+				if(/[^\d]/.test(target.value)){
+					target.style.backgroundColor="red";
+				}else{
+					target.style.backgroundColor="";
+				}
+			});
+			eventUtil.addHander(textbtn,"blur",function(event){
+				event=eventUtil.getEvent(event);
+				var target=eventUtil.getTarget(event);
+				if(/[^\d]/.test(target.value)){
+					target.style.backgroundColor="red"
+				}else{
+					target.style.backgroundColor="";
+				}
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../eventUtil.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!--select事件-->
+		<form action="" method="post">
+			<input type="text" name="" id="" value="" />
+			<input type="button" value="click me"/>
+		</form>
+		<!--通过h5的selectstart 和selectend来取得，用户选择的位置-->
+		<script type="text/javascript">
+			var form=document.forms[0];
+			var textbox=form.elements[0];
+			eventUtil.addHander(textbox,"select",function(event){
+				 var textselect=textbox.value.substring(textbox.selectionStart,textbox.selectionEnd);
+				 alert("text selected  "+"'"+textselect+"")
+			})
+			//setselectrang();
+			var btn=form.elements[1];
+			eventUtil.addHander(btn,"click",function(event){
+				var event=event || window.event;
+				var target=event.target||event.srcElement;
+				textbox.setSelectionRange(3,textbox.value.length);
+			})
+		</script>
+	</body>
+</html>
